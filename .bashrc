@@ -26,7 +26,7 @@ ranger() {
 	fi
 }
 
-export JAVA_HOME="/usr/lib/jvm/java-11-openjdk"
+export JAVA_HOME="/usr/lib/jvm/java-15-openjdk"
 export PATH="$PATH:$JAVA_HOME/bin:$HOME/.local/bin"
 
 # Avoid duplicates
