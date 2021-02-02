@@ -37,3 +37,4 @@ shopt -s histappend
 # After each command, append to the history file and reread it
 PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 alias gitdot='/usr/bin/git --git-dir=/home/helge/dotfiles/ --work-tree=/home/helge'
+alias 'sshphysik'='TERM=vt100; ssh physik-cip '
