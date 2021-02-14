@@ -26,6 +26,8 @@ Plug 'ycm-core/YouCompleteMe'
 Plug 'mbbill/undotree'
 Plug 'lervag/vimtex'
 Plug 'sirver/ultisnips'
+"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug '/usr/bin/fzf'
 "Plug 'ervandew/supertab'
 
 call plug#end()
