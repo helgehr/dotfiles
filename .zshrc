@@ -70,7 +70,9 @@ ZSH_THEME="af-magic"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git fzf)
+
+export FZF_BASE="/usr/share/fzf"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -82,11 +84,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='mvim'
-fi
+#if [[ -n $SSH_CONNECTION ]]; then
+#  export EDITOR='vim'
+#else
+#  export EDITOR='mvim'
+#fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -101,12 +103,13 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Fuzzy finder
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+#source /usr/share/fzf/key-bindings.zsh
+#source /usr/share/fzf/completion.zsh
 
 export JAVA_HOME="/usr/lib/jvm/java-15-openjdk"
 path+=($JAVA_HOM)
 path+=($HOME/.local/bin)
 export PATH
 
+unsetopt beep
 bindkey -v

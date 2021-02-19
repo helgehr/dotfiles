@@ -5,8 +5,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
-PS1="[\[\e[0;34m\]\u\[\e[m\]@\[\e[0;36m\]\h\[\e[m\] \W]$"
+source ~/.git-prompt.sh
+#PROMPT_COMMAND='__git_ps1 "\[\e[0;34m\]\u\[\e[m\]@\[\e[0;36m\]\h\[\e[m\] \W" "\\\$ "'
+PS1='[\[\e[0;34m\]\u\[\e[m\]@\[\e[0;36m\]\h\[\e[m\] \W$(__git_ps1 " (%s)")]\$ '
 
 export EDITOR=vim
 

@@ -45,5 +45,5 @@ interface_name_include = []
 
 [[block]]
 block = "time"
-interval = 60
+interval = 5
 format = "%d/%m %R"
