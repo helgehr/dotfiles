@@ -55,3 +55,7 @@ alias 'sshuran001'='TERM=vt100; ssh uran001'
 #Fuzzy finder
 source /usr/share/fzf/key-bindings.bash
 source /usr/share/fzf/completion.bash
+export FZF_DEFAULT_COMMAND='rg --files'
+export FZF_CRTL_T_COMMAND='rg --files'
+export FZF_ALT_C_COMMAND='rg --files --null | xargs -0 dirname | uniq'
+

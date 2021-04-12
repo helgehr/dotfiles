@@ -12,7 +12,7 @@ set undodir=~/.vim/undodir
 set undofile
 set incsearch
 set tabstop=4
-set spelllang=en_us
+set spelllang=en_us,de_de
 set clipboard=unnamedplus
 let mapleader=","
 let maplocalleader="\\"
@@ -26,8 +26,8 @@ Plug 'ycm-core/YouCompleteMe'
 Plug 'mbbill/undotree'
 Plug 'lervag/vimtex'
 Plug 'sirver/ultisnips'
-"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug '/usr/bin/fzf'
+Plug 'JuliaEditorSupport/julia-vim'
 "Plug 'ervandew/supertab'
 
 call plug#end()
