@@ -39,7 +39,7 @@ bindsym $mod+Mod1+q [class=".*"] kill
 # start dmenu (a program launcher)
 bindsym $mod+d exec rofi -show run
 bindsym $mod+c exec passmenu
-bindsym $mod+n exec rofi -show choose_network -modi "choose_network:~/.config/rofi/nmcli_connect.sh"
+bindsym $mod+n exec rofi -matching normal -show choose_network -modi "choose_network:~/.config/rofi/nmcli_connect.sh"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.

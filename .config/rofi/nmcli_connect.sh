@@ -19,5 +19,3 @@ else
   echo -e "$nmcli_out"
   echo "quit"
 fi
-
-# Usage: rofi -show test -modi "test:~/rofi_test.sh"
