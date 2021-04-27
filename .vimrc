@@ -28,6 +28,7 @@ Plug 'lervag/vimtex'
 Plug 'sirver/ultisnips'
 Plug '/usr/bin/fzf'
 Plug 'JuliaEditorSupport/julia-vim'
+Plug 'preservim/nerdcommenter'
 "Plug 'ervandew/supertab'
 
 call plug#end()
