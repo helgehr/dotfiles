@@ -70,7 +70,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+b split b
+bindsym $mod+b split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -295,9 +295,8 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 #Autostart pulseaudio for FireFox
 exec --no-startup-id start-pulseaudio-x11
-#exec --no-startup-id nm-applet
 #Set Wallpaper
 exec_always --no-startup-id feh --bg-scale /home/helge/Pictures/reddit_earthporn.jpg
+exec --no-startup-id redshift
 exec --no-startup-id nm-applet
 #exec --no-startup-id owncloud
-exec --no-startup-id redshift
