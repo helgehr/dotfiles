@@ -37,19 +37,20 @@ ranger() {
 	fi
 }
 
-export JAVA_HOME="/usr/lib/jvm/java-15-openjdk"
-export PATH="$PATH:$JAVA_HOME/bin:$HOME/.local/bin"
+export JAVA_HOME="/usr/lib/jvm/java-16-openjdk"
 
 # Avoid duplicates
 HISTCONTROL=ignoredups:erasedups
 # When the shell exits, append to the history file instead of overwriting it
 shopt -s histappend
+HISTSIZE=2000
+HISTFILESIZE=4000
 
 # After each command, append to the history file and reread it
 PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 alias gitdot='/usr/bin/git --git-dir=/home/helge/dotfiles/ --work-tree=/home/helge'
 
-alias 'sshphysik'='TERM=vt100; ssh physik-cip'
+alias 'sshphysik'='TERMsave=$TERM; TERM=vt100; ssh physik-cip; TERM=$TERMsave'
 alias 'sshuran001'='TERM=vt100; ssh uran001'
 
 #Fuzzy finder
@@ -59,3 +60,5 @@ export FZF_DEFAULT_COMMAND='rg --files'
 export FZF_CRTL_T_COMMAND='rg --files'
 export FZF_ALT_C_COMMAND='rg --files --null | xargs -0 dirname | uniq'
 
+# Prevent ranger from loading default rc
+export RANGER_LOAD_DEFAULT_RC=false

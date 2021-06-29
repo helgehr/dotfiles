@@ -14,8 +14,8 @@ alert = 0.5
 [[block]]
 block = "memory"
 display_type = "memory"
-format_mem = "{Mup}%"
-format_swap = "{SUp}%"
+format_mem = "{mem_free;M}/{mem_total;M}"
+format_swap = "{swap_free;M}/{swap_total;M}"
 
 [[block]]
 block = "cpu"

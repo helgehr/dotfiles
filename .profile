@@ -2,6 +2,8 @@
 
 eval `dircolors $HOME/.dircolors`
 
+export PATH="$PATH:$JAVA_HOME/bin:$HOME/.local/bin:$HOME/.bin"
+
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   exec startx
 fi

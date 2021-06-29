@@ -1,6 +1,6 @@
 #!/bin/bash
 
-nmcli_out=$(nmcli con)
+nmcli_out=$(nmcli con | grep -v "^NAME")
 
 if [[ "$1" == "quit" ]]; then
   exit 0

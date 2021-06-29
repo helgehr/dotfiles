@@ -1,0 +1,47 @@
+#!/bin/bash
+#
+# Start a composition manager.
+# (xcompmgr in this case)
+
+default() {
+	echo "--status"
+	echo "-q"
+	echo "-s"
+	echo "*"
+}
+
+comphelp() {
+    echo "Composition Manager:"
+    echo "   (re)start: COMP -s"
+    echo "   stop:      COMP -q"
+    echo "   status:     COMP --status"
+    echo "              returns 0 if composition manager is running, else 1"
+    exit
+}
+
+checkcomp() {
+    pgrep xcompmgr &>/dev/null
+}
+
+checkcompwithoutput() {
+    pgrep xcompmgr &>/dev/null && echo "xcompmgr running" || echo "xcompmgr not running"
+}
+
+stopcomp() {
+    checkcomp && killall xcompmgr
+}
+
+startcomp() {
+    stopcomp
+    # Example settings only. Replace with your own.
+    # xcompmgr -CcfF -I-.015 -O-.03 -D6 -t-1 -l-3 -r4.2 -o.5 &
+    xcompmgr &
+    exit
+}
+
+case "$1" in
+    "--status") checkcompwithoutput ;;
+    "-s")   startcomp ;;
+    "-q") stopcomp; exit ;;
+    *)    comphelp ;;
+esac

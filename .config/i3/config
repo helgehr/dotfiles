@@ -38,6 +38,7 @@ bindsym $mod+Mod1+q [class=".*"] kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec rofi -show run
+#bindsym $mod+d exec --no-startup-id "rofi -show drun -font \\"DejaVu 9\\" -run-shell-command '{terminal} -e \\" {cmd}; read -n 1 -s\\"'"
 bindsym $mod+c exec passmenu
 bindsym $mod+n exec rofi -matching normal -show choose_network -modi "choose_network:~/.config/rofi/nmcli_connect.sh"
 # There also is the (new) i3-dmenu-desktop which only displays applications
@@ -131,8 +132,9 @@ bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
-assign [class="Spotify"] $workspace10
-for_window [class="Spotify"] move to workspace $workspace10
+#assign [class="Spotify"] $workspace10
+for_window [class="Spotify"] move container to scratchpad
+#move to workspace $workspace10
 assign [class="Inkscape"] $workspace6
 assign [class="Gimp"] $workspace6
 
@@ -271,32 +273,20 @@ bar {
 #        status_command i3status
 #}
 
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
 #Own changes
 bindsym $mod+shift+x exec i3lock --color "$bg-color"
 bindsym $mod+shift+a exec alacritty -e ranger
 
-# Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +3% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -3% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
-
-# Sreen brightness controls
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20 # decrease screen brightness
-
-# Touchpad controls
-bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
-
-# Media player controls
-bindsym XF86AudioPlay exec --no-startup-id playerctl play
-bindsym XF86AudioStop exec --no-startup-id playerctl pause
-bindsym XF86AudioNext exec --no-startup-id playerctl next
-bindsym XF86AudioPrev exec --no-startup-id playerctl previous
-
 #Autostart pulseaudio for FireFox
 exec --no-startup-id start-pulseaudio-x11
 #Set Wallpaper
-exec_always --no-startup-id feh --bg-scale /home/helge/Pictures/reddit_earthporn.jpg
+exec_always --no-startup-id feh --bg-scale /home/helge/Pictures/Wallpaper/BlueRidgeMountains.jpg
 exec --no-startup-id redshift
 exec --no-startup-id nm-applet
 #exec --no-startup-id owncloud
