@@ -37,7 +37,7 @@ ranger() {
 	fi
 }
 
-export JAVA_HOME="/usr/lib/jvm/java-16-openjdk"
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk"
 
 # Avoid duplicates
 HISTCONTROL=ignoredups:erasedups

@@ -239,7 +239,8 @@ bar {
     output nonprimary
     font pango:DejaVu Sans Mono, Font Awesome 5 Free
     position bottom
-    status_command /usr/bin/i3status-rs /home/helge/.config/i3status-rust/config.toml
+	status_command /usr/bin/i3status-rs /home/helge/.config/i3status-rust/config.toml
+    #status_command /home/helge/.cargo/bin/i3status-rs /home/helge/.config/i3status-rust/config.toml
     colors {
         separator #666666
         background #222222
